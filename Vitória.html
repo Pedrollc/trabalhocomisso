@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitória</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    #proposal-container {
+      position: relative;
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: top 0.5s, left 0.5s;
+    }
+
+    #noButton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #noButton:hover {
+      animation: moveAround 2s infinite;
+    }
+
+    @keyframes moveAround {
+      25% {
+        top: 10vh;
+        left: 10vw;
+      }
+      50% {
+        top: 10vh;
+        left: 80vw;
+      }
+      75% {
+        top: 80vh;
+        left: 80vw;
+      }
+      100% {
+        top: 80vh;
+        left: 10vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="proposal-container">
+  <p>tem vaga na sua agenda, pra gente ser ver esse semana?</p>
+  <button onclick="alert('Yay! Isso é maravilhoso!')">Sim</button>
+  <button id="noButton" onclick="moveAround()">Não</button>
+</div>
+
+<script>
+  function moveAround() {
+    var proposalContainer = document.getElementById('proposal-container');
+    var randomTop = Math.floor(Math.random() * 71) + 10; // 10 to 80
+    var randomLeft = Math.floor(Math.random() * 71) + 10; // 10 to 80
+
+    proposalContainer.style.top = randomTop + 'vh';
+    proposalContainer.style.left = randomLeft + 'vw';
+  }
+</script>
+
+</body>
+</html>
